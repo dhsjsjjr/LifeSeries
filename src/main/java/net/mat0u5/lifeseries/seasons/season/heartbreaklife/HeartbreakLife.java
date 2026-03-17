@@ -1,5 +1,6 @@
 package net.mat0u5.lifeseries.seasons.season.heartbreaklife;
 
+import net.mat0u5.lifeseries.Main;
 import net.mat0u5.lifeseries.config.ConfigManager;
 import net.mat0u5.lifeseries.network.packets.simple.SimplePackets;
 import net.mat0u5.lifeseries.registries.ItemRegistry;
@@ -55,7 +56,7 @@ public class HeartbreakLife extends Season {
     @Override
     public void tickSessionOn(MinecraftServer server) {
         super.tickSessionOn(server);
-        if (currentSession.statusStarted() && !proposalPhase) {
+        if (Main.currentSession.statusStarted() && !proposalPhase) {
             startProposalPhase();
         }
     }

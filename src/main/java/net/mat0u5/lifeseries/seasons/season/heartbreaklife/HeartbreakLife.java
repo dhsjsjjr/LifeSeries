@@ -97,9 +97,19 @@ public class HeartbreakLife extends Season {
         proposer.sendSystemMessage(Component.literal("Proposal sent to " + target.getName().getString() + "!"));
         target.sendSystemMessage(Component.literal(proposer.getName().getString() + " has proposed to you! ")
                 .append(Component.literal("[Accept]").withStyle(ChatFormatting.GREEN)
-                        .withStyle(style -> style.withClickEvent(ClickEvent.clickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak accept " + proposer.getUUID()))))
+                        //? if >= 1.21 {
+                        .withStyle(style -> style.withClickEvent(ClickEvent.clickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak accept " + proposer.getUUID())))
+                        //?} else {
+                        .withStyle(style -> style.withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak accept " + proposer.getUUID())))
+                        //?}
+                        )
                 .append(Component.literal(" [Decline]").withStyle(ChatFormatting.RED)
-                        .withStyle(style -> style.withClickEvent(ClickEvent.clickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak decline " + proposer.getUUID())))));
+                        //? if >= 1.21 {
+                        .withStyle(style -> style.withClickEvent(ClickEvent.clickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak decline " + proposer.getUUID())))
+                        //?} else {
+                        .withStyle(style -> style.withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak decline " + proposer.getUUID())))
+                        //?}
+                        ));
     }
 
     public void acceptProposal(UUID proposerUUID, ServerPlayer accepter) {
@@ -146,6 +156,6 @@ public class HeartbreakLife extends Season {
 
     private void makeLoneWolf(ServerPlayer player) {
         player.sendSystemMessage(Component.literal("You are now a Lone Wolf! You gain permanent Speed boost.").withStyle(ChatFormatting.GOLD));
-        player.addEffect(new MobEffectInstance(MobEffects.SPEED, -1, 0, true, false)); // Permanent speed
+        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, -1, 0, true, false)); // Permanent speed
     }
 }

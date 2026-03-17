@@ -3,9 +3,7 @@ package net.mat0u5.lifeseries.registries;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.mat0u5.lifeseries.command.manager.CommandManager;
 import net.mat0u5.lifeseries.events.Events;
-import net.mat0u5.lifeseries.utils.other.IdentifierHelper;
-import net.mat0u5.lifeseries.utils.other.TaskScheduler;
-import net.mat0u5.lifeseries.utils.other.TextUtils;
+import net.mat0u5.lifeseries.registries.ItemRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.presets.WorldPreset;
@@ -22,6 +20,7 @@ public class ModRegistries {
         TextUtils.setEmotes();
         MobRegistry.registerMobs();
         ParticleRegistry.registerParticles();
+        ItemRegistry.registerItems();
     }
 
     private static void registerCommands() {

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "lifeseries:item/valentines_flower"
+  }
+}

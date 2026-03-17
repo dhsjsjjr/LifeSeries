@@ -1,7 +1,7 @@
 package net.mat0u5.lifeseries.command.manager;
 
 import com.mojang.brigadier.CommandDispatcher;
-import net.mat0u5.lifeseries.command.*;
+import net.mat0u5.lifeseries.command.HeartbreakLifeCommand;
 import net.mat0u5.lifeseries.seasons.boogeyman.BoogeymanCommand;
 import net.mat0u5.lifeseries.seasons.season.doublelife.DoubleLifeCommands;
 import net.mat0u5.lifeseries.seasons.season.nicelife.NiceLifeCommands;
@@ -40,6 +40,8 @@ public class CommandManager {
 
         commands.add(new WildLifeTriviaCommand());
         commands.add(new NiceLifeTriviaCommand());
+
+        commands.add(new HeartbreakLifeCommand());
 
         commands.add(new SelfMessageCommand());
         commands.add(new SideTitleCommand());

@@ -6,6 +6,7 @@ import net.mat0u5.lifeseries.seasons.season.doublelife.DoubleLife;
 import net.mat0u5.lifeseries.seasons.season.lastlife.LastLife;
 import net.mat0u5.lifeseries.seasons.season.limitedlife.LimitedLife;
 import net.mat0u5.lifeseries.seasons.season.nicelife.NiceLife;
+import net.mat0u5.lifeseries.seasons.season.heartbreaklife.HeartbreakLife;
 import net.mat0u5.lifeseries.seasons.season.pastlife.PastLife;
 import net.mat0u5.lifeseries.seasons.season.secretlife.SecretLife;
 import net.mat0u5.lifeseries.seasons.season.thirdlife.ThirdLife;
@@ -33,6 +34,7 @@ public enum Seasons {
     WILD_LIFE("Wild Life", "wildlife"),
     PAST_LIFE("Past Life", "pastlife"),
     NICE_LIFE("Nice Life", "nicelife"),
+    HEARTBREAK_LIFE("Heartbreak Life", "heartbreaklife"),
 
     REAL_LIFE("Real Life", "reallife"),
     SIMPLE_LIFE("Simple Life", "simplelife");
@@ -61,6 +63,7 @@ public enum Seasons {
         if (this == SECRET_LIFE) return new SecretLife();
         if (this == WILD_LIFE) return new WildLife();
         if (this == PAST_LIFE) return new PastLife();
+        if (this == HEARTBREAK_LIFE) return new HeartbreakLife();
         if (this == NICE_LIFE) return new NiceLife();
 
         if (this == REAL_LIFE) return new RealLife();

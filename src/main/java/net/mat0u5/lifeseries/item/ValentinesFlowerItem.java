@@ -22,7 +22,11 @@ public class ValentinesFlowerItem extends Item {
 
     @Override
     public InteractionResult interactLivingEntity(ItemStack stack, Player user, LivingEntity entity, InteractionHand hand) {
-        if (!(user instanceof ServerPlayer player) || !(entity instanceof ServerPlayer target)) {
+        return handleInteraction(stack, user, entity, hand);
+    }
+
+    private InteractionResult handleInteraction(ItemStack stack, Player player, LivingEntity entity, InteractionHand hand) {
+        if (!(player instanceof ServerPlayer serverPlayer) || !(entity instanceof ServerPlayer target)) {
             return InteractionResult.PASS;
         }
 
@@ -32,16 +36,16 @@ public class ValentinesFlowerItem extends Item {
 
         HeartbreakLife season = (HeartbreakLife) Main.currentSeason;
         if (!season.isProposalPhase()) {
-            player.sendSystemMessage(Component.literal("The proposal phase has ended!"));
+            serverPlayer.sendSystemMessage(Component.literal("The proposal phase has ended!"));
             return InteractionResult.PASS;
         }
 
-        if (season.hasPartner(player) || season.hasPartner(target)) {
-            player.sendSystemMessage(Component.literal("One of you already has a partner!"));
+        if (season.hasPartner(serverPlayer) || season.hasPartner(target)) {
+            serverPlayer.sendSystemMessage(Component.literal("One of you already has a partner!"));
             return InteractionResult.PASS;
         }
 
-        season.sendProposal(player, target);
+        season.sendProposal(serverPlayer, target);
         stack.shrink(1); // Consume the item
         return InteractionResult.SUCCESS;
     }

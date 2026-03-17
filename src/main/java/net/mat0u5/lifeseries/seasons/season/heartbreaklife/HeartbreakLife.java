@@ -84,9 +84,7 @@ public class HeartbreakLife extends Season {
 
     private void giveValentinesFlower(ServerPlayer player) {
         ItemStack flower = new ItemStack(ItemRegistry.VALENTINES_FLOWER);
-        if (!player.getInventory().contains(flower)) {
-            player.getInventory().add(flower);
-        }
+        player.getInventory().add(flower);
     }
 
     public void sendProposal(ServerPlayer proposer, ServerPlayer target) {
@@ -144,3 +142,9 @@ public class HeartbreakLife extends Season {
         super.assignDefaultLives(player);
         giveValentinesFlower(player);
     }
+
+    private void makeLoneWolf(ServerPlayer player) {
+        player.sendSystemMessage(Component.literal("You are now a Lone Wolf! You gain permanent Speed boost.").withStyle(ChatFormatting.GOLD));
+        player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, -1, 0, true, false)); // Permanent speed
+    }
+}

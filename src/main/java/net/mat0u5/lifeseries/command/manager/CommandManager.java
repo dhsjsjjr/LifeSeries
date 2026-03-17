@@ -41,7 +41,7 @@ public class CommandManager {
         commands.add(new WildLifeTriviaCommand());
         commands.add(new NiceLifeTriviaCommand());
 
-        commands.add(new HeartbreakLifeCommand());
+        // commands.add(new HeartbreakLifeCommand());
 
         commands.add(new SelfMessageCommand());
         commands.add(new SideTitleCommand());

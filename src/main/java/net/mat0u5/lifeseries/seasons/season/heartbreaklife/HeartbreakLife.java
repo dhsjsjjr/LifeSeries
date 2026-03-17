@@ -97,19 +97,9 @@ public class HeartbreakLife extends Season {
         proposer.sendSystemMessage(Component.literal("Proposal sent to " + target.getName().getString() + "!"));
         target.sendSystemMessage(Component.literal(proposer.getName().getString() + " has proposed to you! ")
                 .append(Component.literal("[Accept]").withStyle(ChatFormatting.GREEN)
-                        //? if >= 1.21 {
-                        .withStyle(style -> style.withClickEvent(ClickEvent.clickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak accept " + proposer.getUUID())))
-                        //?} else {
-                        .withStyle(style -> style.withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak accept " + proposer.getUUID())))
-                        //?}
-                        )
+                        .withStyle(style -> style.withClickEvent(ClickEvent.clickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak accept " + proposer.getUUID()))))
                 .append(Component.literal(" [Decline]").withStyle(ChatFormatting.RED)
-                        //? if >= 1.21 {
-                        .withStyle(style -> style.withClickEvent(ClickEvent.clickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak decline " + proposer.getUUID())))
-                        //?} else {
-                        .withStyle(style -> style.withClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak decline " + proposer.getUUID())))
-                        //?}
-                        ));
+                        .withStyle(style -> style.withClickEvent(ClickEvent.clickEvent(ClickEvent.Action.RUN_COMMAND, "/heartbreak decline " + proposer.getUUID())))));
     }
 
     public void acceptProposal(UUID proposerUUID, ServerPlayer accepter) {

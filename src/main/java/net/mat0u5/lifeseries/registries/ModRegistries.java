@@ -11,13 +11,13 @@ import net.minecraft.world.level.levelgen.presets.WorldPreset;
 public class ModRegistries {
     public static final ResourceKey<WorldPreset> SIMPLE_LIFE = ResourceKey.create(
             Registries.WORLD_PRESET,
-            IdentifierHelper.mod("simple_life")
+            net.mat0u5.lifeseries.utils.other.IdentifierHelper.mod("simple_life")
     );
 
     public static void registerModStuff() {
         registerCommands();
         registerEvents();
-        TextUtils.setEmotes();
+        net.mat0u5.lifeseries.utils.other.TextUtils.setEmotes();
         MobRegistry.registerMobs();
         ParticleRegistry.registerParticles();
         ItemRegistry.registerItems();
@@ -29,6 +29,6 @@ public class ModRegistries {
 
     private static void registerEvents() {
         Events.register();
-        TaskScheduler.registerTickHandler();
+        net.mat0u5.lifeseries.utils.other.TaskScheduler.registerTickHandler();
     }
 }
